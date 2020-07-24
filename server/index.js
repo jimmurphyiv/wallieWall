@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
-const mainCtrl = require('./Controllers/mainCtrl');
+// const mainCtrl = require('./Controllers/mainCtrl');
 const authCtrl = require('./Controllers/authCtrl');
 
 const {SERVER_PORT,
@@ -23,14 +23,14 @@ app.use(session({
     saveUninitialized: true,
     secret: SESSION_SECRET,
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 21}
-}))
+}));
 
 massive({
     connectionString: CONNECTION_STRING,
     ssl: {rejectUnauthorized: false}
 }).then(db => {
     app.set('db', db);
-    console.log('db is all good')
+    console.log('db ALL GOOD')
 })
 
 // aws.config = {
@@ -39,4 +39,10 @@ massive({
 //     secretAccessKey: AWS_SECRET_ACCESS_KEY
 // }
 
-app.listen(SERVER_PORT, () => console.log('Good Vibes on 5050 '))
+//Authorization 
+app.post('/auth/register',  authCtrl.register);
+app.post('/auth/Login', authCtrl.login);
+app.get('/auth/logout', authCtrl.logout);
+app.get('/auth/me', authCtrl.logMeIn);
+
+app.listen(SERVER_PORT, () => console.log('Good Vibes on 5050'))
