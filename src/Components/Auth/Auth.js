@@ -1,7 +1,7 @@
 import React,  {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import {getUser} from './Dux/authReducer';
+import {getUser} from '../../Dux/authReducer';
 
 class Auth extends Component {
     constructor(props){
@@ -12,7 +12,7 @@ class Auth extends Component {
             username: '',
             password:'',
             email: '',
-            profilePic: '',
+            profile_pic: '',
             registerView: false
 
         }
@@ -33,11 +33,11 @@ class Auth extends Component {
     }
 
     handleRegister = () => {
-        const {first_name, last_name, username, password, email, profilePic} = this.state;
-           axios.post('/auth/register', {first_name, last_name, username, password, email, profilePic})
+        const {first_name, last_name, username, password, email, profile_pic} = this.state;
+           axios.post('/auth/register', {first_name, last_name, username, password, email, profile_pic})
             .then(res => {
                 this.props.getUser(res.data)
-                this.props.history.push('/Dash');
+                this.props.history.push('/Auth');
             })
             .catch(err => console.log(err));
        
@@ -45,48 +45,30 @@ class Auth extends Component {
      
 
     }
-
-    handleLogin = () => {
-        const {email, password} = this.state;
-        axios.post('/auth/login', {email, password})
-        .then(res => {
-            this.props.getUser(res.data)
-            this.props.history.push('/Dash');
-        })
-        .catch(err => console.log(err));
-    }
-
     
-
-   
-
-
-
 
     render(){
         return (
         <div className='auth-container'>
             <section className='auth-info'>
-                {this.state.registerView
-                    ? (<>
-                    <h3>Sign-up Here</h3>
+                
                     <input 
                         value={this.state.username}
                         name='username'
                         placeholder='USERNAME'
                         onChange={this.handleInput}/>
-                       </>)
-                    : <h3>Login Below</h3>}
+                    
                      <input 
                         value={this.state.first_name}
                         name='first name'
-                        placeholder='First Name'
+                        placeholder='FIRST NAME'
                         onChange={this.handleInput}/>
                     <input 
                         value={this.state.last_name}
                         name='last name'
-                        placeholder='Last Name'
+                        placeholder='LAST NAME'
                         onChange={this.handleInput}/>
+                 
                     <input 
                         value={this.state.email}
                         name='email'
@@ -98,8 +80,7 @@ class Auth extends Component {
                         name='password'
                         placeholder='PASSWORD'
                         onChange={this.handleInput}/>
-                    {this.state.registerView
-                    ? (<>
+                   
                         <input
                         value={this.state.picture}
                         name='picture'
@@ -107,15 +88,7 @@ class Auth extends Component {
                         onChange={this.handleInput}/>
 
                     <button onClick={this.handleRegister}>REGISTER</button>
-                    <p>Already a user? <span onClick={this.handleToggle}><button>LOGIN</button></span></p>
-                       </>)
-                    : (<>
-                    <button onClick={this.handleLogin}>LOGIN</button>
-                    <p>No account? <span onClick={this.handleToggle}><button>Sign-up!</button></span></p>
-                </>)}
             </section>
-                        
-        
         </div>
         ) 
     }

@@ -1,4 +1,4 @@
 import {createStore} from 'redux';
-import authReducer from '../dux/authReducer';
+import authReducer from '../Dux/authReducer';
 
 export default createStore(authReducer);

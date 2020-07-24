@@ -1,7 +1,7 @@
 import React,  {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {getUser, clearUser} from './Dux/authReducer';
+import {getUser, clearUser} from '../../Dux/authReducer';
 import axios from 'axios';
 
 class Nav extends Component {
@@ -17,11 +17,11 @@ class Nav extends Component {
         }
         
         logMeIn = () => (
-            axios.get('/api/me')
+            axios.get('/auth/me')
             .then(res => {
                 this.props.getUser(res.data);
             })
-            
+            .catch(err => console.log(err, 'logMeIn not hitting'))
         )
         handleLogout = () => {
             axios.get('/auth/logout')
@@ -40,22 +40,15 @@ render(){
                         
                             <Link to='/'>
                                 <button onClick={this.handleLogout} >Logout</button></Link>
-{/*                         
-                        <li>
-                            <Link to='/post'><button>New Posts</button></Link>
-                        </li> */}
-                        <li>
-                            <Link to='/posts'><button>Dash</button></Link>
-                        </li>
+
+                       
                     </ul>
                 </div>
             </div> 
         ) 
     }
 }
-const mapStateToProps = (state) => {
-    return{
-        w_user: state.w_user
-    }
-}
+
+const mapStateToProps = reduxState => reduxState;
+    
 export default connect(mapStateToProps, {getUser, clearUser})(Nav);
