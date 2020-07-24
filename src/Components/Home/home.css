@@ -1,0 +1,13 @@
+.l-block{
+    box-sizing: content-box;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40vw;
+   
+    
+    
+    
+
+}
