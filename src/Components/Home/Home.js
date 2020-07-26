@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import {getUser} from '../../Dux/authReducer';
 import './home.css';
+import Nav from '../Nav/Nav';
+
 
 class Home extends Component{
     constructor(props){
@@ -35,6 +37,7 @@ class Home extends Component{
     render(){
         return(
             <div>
+                <Nav />
                 <div className='l-block'>
                 <input 
                     value={this.state.email}
@@ -48,9 +51,10 @@ class Home extends Component{
                     placeholder='PASSWORD'
                     onChange={this.handleInput}/>
                 <button onClick={this.handleLogin} >LOGIN</button>
-                </div>
-            <Link to='/auth'>
+                
+            <Link to='/Auth'>
                     <button onClick={this.handleRegister} >Register</button></Link>
+                </div>
             </div>
         )
     }

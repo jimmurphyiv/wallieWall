@@ -9,11 +9,11 @@ import Contact from './Components/Contact/Contact';
 
 export default(
     <Switch>
-        <Route exact path='/' component={Home} />
+        <Route component={Home} exact path='/'  />
         <Route path='/auth' component={Auth} />
         <Route path= '/Dash' component={Dash} />
         <Route path= '/profile' component={Profile} />
         <Route path= '/search' component={Search} />
-        <Route path= 'Contact' component={Contact} />
+        <Route path= '/Contact' component={Contact} />
     </Switch>
 );

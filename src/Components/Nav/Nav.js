@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getUser, clearUser} from '../../Dux/authReducer';
 import axios from 'axios';
+import './nav.css';
+
 
 class Nav extends Component {
     constructor(props){
@@ -26,23 +28,36 @@ class Nav extends Component {
         handleLogout = () => {
             axios.get('/auth/logout')
             .then (() => {
-           
+            
             this.props.clearUser()
+            this.props.history.push('/')
             })
             .catch(err => console.log(err, 'You up and did it'))
             }
 
 render(){
+    
         return (
             <div className='Nav'>
                 <div>
-                    <ul>
-                        
-                            <Link to='/'>
-                                <button onClick={this.handleLogout} >Logout</button></Link>
-
-                       
-                    </ul>
+                   <nav>
+                        <li>
+                            <Link to='/Dash'>Dash</Link>
+                        </li>
+                        <li>
+                            <Link to='/Profile'>Profile</Link>
+                        </li>
+                        <li>
+                            <Link to='/Search'>Search</Link>
+                        </li>
+                        <li>
+                            <Link to='/Contact'>Contact</Link>
+                        </li>
+                        <li>
+                            <Link to='/'
+                            onClick={this.handleLogout} >Logout</Link>
+                        </li>
+                         </nav>
                 </div>
             </div> 
         ) 

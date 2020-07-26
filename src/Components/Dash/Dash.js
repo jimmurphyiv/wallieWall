@@ -14,11 +14,7 @@ class Dashboard extends Component {
             editView: false
         }
     }
-    // componentDidMount(){
-    //     if(!this.props.username){
-    //         this.props.history.push('/');
-    //     }
-    // }
+  
 
     handleInput = (val) => {
         this.setState({ first_name: val, last_name: val, username: val, profile_pic: val })
