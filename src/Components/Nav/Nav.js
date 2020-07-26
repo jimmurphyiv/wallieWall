@@ -36,11 +36,13 @@ class Nav extends Component {
             }
 
 render(){
+    // <a class="nav-link" href="#">Link 1</a>
     
         return (
             <div className='Nav'>
                 <div>
                    <nav>
+                       <ul>
                         <li>
                             <Link to='/Dash'>Dash</Link>
                         </li>
@@ -57,6 +59,7 @@ render(){
                             <Link to='/'
                             onClick={this.handleLogout} >Logout</Link>
                         </li>
+                        </ul>
                          </nav>
                 </div>
             </div> 

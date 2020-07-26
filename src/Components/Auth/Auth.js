@@ -25,7 +25,7 @@ class Auth extends Component {
     }
 
     handleInput = (e) => {
-        this.setState({[e.target.name]: e.target.value})
+        this.setState({[e.target.props]: e.target.value})
     }
 
     handleToggle = () => {
@@ -50,15 +50,14 @@ class Auth extends Component {
     render(){
         return (
         <div className='auth-container'>
-            <section className='auth-info'>
+            <section>
                 
                     <input 
                         value={this.state.username}
                         name='username'
                         placeholder='USERNAME'
                         onChange={this.handleInput}/>
-                    
-                     <input 
+                    <input 
                         value={this.state.first_name}
                         name='first name'
                         placeholder='FIRST NAME'
@@ -68,7 +67,6 @@ class Auth extends Component {
                         name='last name'
                         placeholder='LAST NAME'
                         onChange={this.handleInput}/>
-                 
                     <input 
                         value={this.state.email}
                         name='email'
@@ -80,8 +78,7 @@ class Auth extends Component {
                         name='password'
                         placeholder='PASSWORD'
                         onChange={this.handleInput}/>
-                   
-                        <input
+                    <input
                         value={this.state.picture}
                         name='picture'
                         placeholder='PASTE PIC URL'

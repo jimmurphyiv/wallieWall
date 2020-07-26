@@ -1,24 +1,14 @@
 
-.Nav {
-    display: flex;
-    flex-direction: row-reverse;
+Nav {
+    display: flexbox;
+    padding-left: 40%;
     align-items: center;
    
-    
+    justify-content: space-evenly;
     padding-right: 10%;
     margin-top: 30px;
     height: 75px;
     background-color: teal;
 }
 
-li {
-    display: inline-flex;
-    flex-direction: row-reverse;
-   
-    list-style-type: none;
-    
-}
 
-link {
-    list-style-type: none;
-}

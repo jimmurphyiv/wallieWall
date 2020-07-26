@@ -1,4 +1,6 @@
-auth-info {
+auth-container {
     display: flex;
-    flex-direction: column;
+    
+    
+   
 }
