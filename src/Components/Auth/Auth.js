@@ -12,8 +12,8 @@ class Auth extends Component {
             username: '',
             password:'',
             email: '',
-            profile_pic: '',
-            registerView: false
+            profile_pic: ''
+           
 
         }
     }
@@ -25,19 +25,18 @@ class Auth extends Component {
     }
 
     handleInput = (e) => {
-        this.setState({[e.target.props]: e.target.value})
-    }
-
-    handleToggle = () => {
-        this.setState({registerView: !this.state.registerView})
+        this.setState({[e.target.name]: e.target.value})
     }
 
     handleRegister = () => {
         const {first_name, last_name, username, password, email, profile_pic} = this.state;
-           axios.post('/auth/register', {first_name, last_name, username, password, email, profile_pic})
+
+        let body =  {first_name, last_name, username, password, email, profile_pic}
+
+           axios.post('/auth/register', body)
             .then(res => {
                 this.props.getUser(res.data)
-                this.props.history.push('/Auth');
+                this.props.history.push('/Dash');
             })
             .catch(err => console.log(err));
        
@@ -59,12 +58,12 @@ class Auth extends Component {
                         onChange={this.handleInput}/>
                     <input 
                         value={this.state.first_name}
-                        name='first name'
+                        name='first_name'
                         placeholder='FIRST NAME'
                         onChange={this.handleInput}/>
                     <input 
                         value={this.state.last_name}
-                        name='last name'
+                        name='last_name'
                         placeholder='LAST NAME'
                         onChange={this.handleInput}/>
                     <input 
@@ -79,9 +78,9 @@ class Auth extends Component {
                         placeholder='PASSWORD'
                         onChange={this.handleInput}/>
                     <input
-                        value={this.state.picture}
-                        name='picture'
-                        placeholder='PASTE PIC URL'
+                        value={this.state.profile_pic}
+                        name='profile_pic'
+                        placeholder='PROFILE PIC'
                         onChange={this.handleInput}/>
 
                     <button onClick={this.handleRegister}>REGISTER</button>

@@ -23,7 +23,7 @@ class Nav extends Component {
             .then(res => {
                 this.props.getUser(res.data);
             })
-            .catch(err => console.log(err, 'logMeIn not hitting'))
+            .catch(err => console.log(err, 'Timed Out'))
         )
         handleLogout = () => {
             axios.get('/auth/logout')
@@ -36,32 +36,28 @@ class Nav extends Component {
             }
 
 render(){
-    // <a class="nav-link" href="#">Link 1</a>
-    
         return (
             <div className='Nav'>
-                <div>
-                   <nav>
-                       <ul>
-                        <li>
-                            <Link to='/Dash'>Dash</Link>
-                        </li>
-                        <li>
-                            <Link to='/Profile'>Profile</Link>
-                        </li>
-                        <li>
-                            <Link to='/Search'>Search</Link>
+                <nav>
+                    <ul>
+                       <li>
+                         <Link to='/'
+                            onClick={this.handleLogout} >Logout</Link>
                         </li>
                         <li>
                             <Link to='/Contact'>Contact</Link>
                         </li>
                         <li>
-                            <Link to='/'
-                            onClick={this.handleLogout} >Logout</Link>
+                            <Link to='/Search'>Search</Link>
                         </li>
-                        </ul>
-                         </nav>
-                </div>
+                        <li>
+                             <Link to='/Profile'>Profile</Link>
+                        </li>
+                        <li>
+                            <Link to='/Dash'>Dash</Link>
+                        </li>
+                    </ul>
+                </nav>
             </div> 
         ) 
     }

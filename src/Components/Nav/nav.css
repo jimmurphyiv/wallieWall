@@ -1,14 +1,36 @@
 
 Nav {
-    display: flexbox;
-    padding-left: 40%;
-    align-items: center;
-   
-    justify-content: space-evenly;
-    padding-right: 10%;
     margin-top: 30px;
     height: 75px;
+    
+}
+
+ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     background-color: teal;
 }
+
+
+li {
+    float: right;
+}
+
+li a {
+    display: flex;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: turquoise;
+  }
+
+
 
 
