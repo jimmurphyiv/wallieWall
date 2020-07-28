@@ -56,7 +56,7 @@ class Profile extends Component{
                 <img src={this.props.w_user.profilePic}
                     alt={this.props.w_user.username}/>
                 {!this.state.editView
-                ? <h2>{this.props.w_user.username} <button id='edit-button' onClick={this.handleEditView}>Edit</button></h2>
+                ? <h2>{this.props.w_user.username} <button id='edit-button' onClick={this.handleEditView}>EDIT PROFILE</button></h2>
                 : (<div><input 
                     value={this.state.first_name}
                     placeholder='NEW FIRST NAME'
@@ -80,10 +80,10 @@ class Profile extends Component{
             </section>
                 <section className='collections'>
                     <div>
-                        <h3>upload</h3>
+                        <h3>UPLOAD</h3>
                     </div>
                     <div>
-                        <h3>download</h3>
+                        <h3>DOWNLOAD</h3>
                     </div>
                     <div>
                         <h3>Public Collection</h3>

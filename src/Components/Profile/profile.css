@@ -11,19 +11,21 @@
 }
 
 .collections {
-    display: flexbox;
+    display: flex;
+    flex-wrap: wrap;
     height: 600px;
     width: 600px;
-    margin-top: 35px;
+    margin: 35px;
 }
 
 .collections > div {
     background-color: white;
-    display: flex;
-    margin-top: 35px;
-    height: 600px;
-    width: 600px;
-    height: 250px;
-    width: 250px;
+    text-align: center;
+    margin: 35px;
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    justify-content: center;
+    
 
 }

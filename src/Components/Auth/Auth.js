@@ -2,6 +2,7 @@ import React,  {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {getUser} from '../../Dux/authReducer';
+import './auth.css'
 
 class Auth extends Component {
     constructor(props){
@@ -80,7 +81,7 @@ class Auth extends Component {
                     <input
                         value={this.state.profile_pic}
                         name='profile_pic'
-                        placeholder='PROFILE PIC'
+                        placeholder='PASTE PROFILE PIC URL'
                         onChange={this.handleInput}/>
 
                     <button onClick={this.handleRegister}>REGISTER</button>

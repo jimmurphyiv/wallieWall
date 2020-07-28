@@ -1,0 +1,28 @@
+.contact-box {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+
+h2 {
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    
+}
+
+.email-box {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    border-radius: 20px;
+    height: 300px;
+    width: 400px;
+    background-color: white;
+    margin-left: 33vw;
+    
+
+}
