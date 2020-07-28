@@ -7,7 +7,7 @@ class Dash extends Component {
 
     render(){
         return(
-            <div className='flex-container'>
+            <section className='flex-container'>
                 
                 <div className='profile-box'>
                     <div className='pic'>
@@ -17,14 +17,16 @@ class Dash extends Component {
                     Subway tile crucifix sustainable man braid fanny pack fashion axe whatever bitters kitsch yr kombucha af messenger bag.Lomo selvage single-origin coffee try-hard beard subway tile jianbing crucifix thundercats vape. Lomo plaid humblebrag mumblecore, offal quinoa fixie taxidermy. Gochujang 3 wolf moon heirloom glossier, squid iceland poke yr slow-carb gluten-free hashtag bicycle rights. Humblebrag sriracha af yuccie, kombucha squid hella selvage
                     </div>
                 </div>
+               
                 <div className='feed'>
                     FEED
                 </div>
+                
                 <div className='messages'>
                     messages
                 </div>
                 
-            </div>
+            </section>
 
         )
     }

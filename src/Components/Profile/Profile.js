@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
 import axios from 'axios';
+import './profile.css'
 
 class Profile extends Component{
     constructor(props){
@@ -40,11 +41,19 @@ class Profile extends Component{
 
     render(){
         return (
-            <div className='profile-veiw'>
-                
-                <img 
-                    className='profile'
-                    src={this.props.w_user.profilePic}
+            <section className='profile-container' >
+                <div className='profile-box'>
+                    <div className='pic'>
+                        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4hqw2XMon3rqiCFCBzaoVH-ljz007Om7SkA&usqp=CAU' alt='bender' />
+                    </div>
+                    <div className='bio'>
+                        Subway tile crucifix sustainable man braid fanny pack fashion axe whatever bitters kitsch yr kombucha af messenger bag.Lomo selvage single-origin coffee try-hard beard subway tile jianbing crucifix thundercats vape. Lomo plaid humblebrag mumblecore, offal quinoa fixie taxidermy. Gochujang 3 wolf moon heirloom glossier, squid iceland poke yr slow-carb gluten-free hashtag bicycle rights. Humblebrag sriracha af yuccie, kombucha squid hella selvage
+                    </div>
+                </div>
+            
+            
+            <section className='edit-inputs'>
+                <img src={this.props.w_user.profilePic}
                     alt={this.props.w_user.username}/>
                 {!this.state.editView
                 ? <h2>{this.props.w_user.username} <button id='edit-button' onClick={this.handleEditView}>Edit</button></h2>
@@ -68,7 +77,24 @@ class Profile extends Component{
                     <button id='edit-button' onClick={this.updateProfile_pic}>Submit</button>
                 </div>)
                 }
-            </div>
+            </section>
+                <section className='collections'>
+                    <div>
+                        <h3>upload</h3>
+                    </div>
+                    <div>
+                        <h3>download</h3>
+                    </div>
+                    <div>
+                        <h3>Public Collection</h3>
+                    </div>
+                    <div>
+                        <h3>Personal Collection</h3>
+                    </div>
+
+                </section>
+
+        </section>      
         )
     } 
 

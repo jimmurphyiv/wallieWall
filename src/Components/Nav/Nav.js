@@ -33,7 +33,7 @@ class Nav extends Component {
             this.props.clearUser()
             this.props.history.push('/')
             })
-            .catch(err => console.log(err, 'You up and did it'))
+            .catch(err => console.log(err, 'You up and Logged Out'))
             }
 
 render(){
