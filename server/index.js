@@ -48,4 +48,10 @@ app.get('/auth/me', authCtrl.logMeIn);
 //User endpoints
 app.put('/api/profile/:id', mainCtrl.editProfile);
 
+//Post endpoints
+app.post('/api/post/:author_id', mainCtrl.createPost);
+// app.get('/api/post/:id', mainCtrl.getUserPost);
+app.get('/api/post/', mainCtrl.getPosts)
+
+
 app.listen(SERVER_PORT, () => console.log('Good Vibes on 5050'))
