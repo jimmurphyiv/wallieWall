@@ -7,3 +7,5 @@ password varchar(250),
 email varchar(250),
 profile_pic text
 );
+
+

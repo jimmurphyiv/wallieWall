@@ -1,0 +1,66 @@
+.flex-contianer{
+    display: flexbox;
+    flex-direction: row;
+    
+}
+
+
+.profile-box{
+    box-sizing: content-box;
+    border-radius: 10px;
+    height: 600px;
+    width: 300px;
+    background-color: teal;
+    margin: 5%;
+}
+
+.pic {
+    box-sizing: content-box;
+    border-radius: 10px;
+    height: 210px;
+    width: 250px;
+    margin: 20px;
+    padding-top: 40px;
+}
+
+.bio {
+    box-sizing: content-box;
+    border-radius: 10px;
+    height: 275px;
+    width: 260px;
+    margin: 20px;
+    padding-top: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+.feed {
+    box-sizing: content-box;
+    border-radius: 10px;
+    height: 600px;
+    width: 500px;
+    background-color: teal;
+    margin: 5%;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    font-size: 25px;
+
+    
+}
+
+.messages { 
+    box-sizing: content-box;
+    border-radius: 10px;
+    height: 600px;
+    width: 300px;
+    background-color: teal;
+    margin: 5%;
+    padding-top: 10px;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+    font-size: 25px;
+
+    
+}

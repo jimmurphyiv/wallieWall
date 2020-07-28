@@ -1,12 +1,13 @@
 
 Nav {
     margin-top: 30px;
-    height: 75px;
+    font-family: 'Hind Madurai', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
     
 }
 
 ul {
-    
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -14,22 +15,24 @@ ul {
     background-color: teal;
 }
 
-
 li {
     float: right;
+    
 }
 
 li a {
     display: flex;
+    height: 50px;
     color: white;
     text-align: center;
+    align-items: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover {
     background-color: turquoise;
-  }
+}
 
 
 

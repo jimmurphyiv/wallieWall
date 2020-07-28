@@ -53,8 +53,11 @@ class Home extends Component{
                 <button onClick={this.handleLogin} >LOGIN</button>
                 
             <Link to='/Auth'>
-                    <button onClick={this.handleRegister} >Register</button></Link>
+                    <button onClick={this.handleRegister} >SIGN-UP!</button></Link>
                 </div>
+                <section className='carousel'>
+                    <h1>SNEEK PEEK</h1>
+                </section>
             </div>
         )
     }
