@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
+import Dropzone from '../Dropzone';
 import axios from 'axios';
 import './profile.css'
 
@@ -24,7 +25,7 @@ class Profile extends Component{
     }
     editProfile = () => {
         const {first_name, last_name, username, profile_pic} = this.state;
-        axios.put(`/auth/edit/${this.props.w_user.id}`, 
+        axios.put(`/auth/edit/${this.props.aR.w_user.id}`, 
         {first_name, last_name, username, profile_pic})
         .then(res => {
             this.props.getUser(res.data[0]);
@@ -40,6 +41,7 @@ class Profile extends Component{
     }
 
     render(){
+        // console.log(this.props)
         return (
             <section className='profile-container' >
                 <div className='profile-box'>
@@ -53,10 +55,10 @@ class Profile extends Component{
             
             
             <section className='edit-inputs'>
-                <img src={this.props.w_user.profilePic}
-                    alt={this.props.w_user.username}/>
+                <img src={this.props.aR.w_user.profile_pic|| ''}
+                    alt={this.props.aR.w_user.username}/>
                 {!this.state.editView
-                ? <h2>{this.props.w_user.username} <button id='edit-button' onClick={this.handleEditView}>EDIT PROFILE</button></h2>
+                ? <h2>{this.props.aR.w_user.username} <button id='edit-button' onClick={this.handleEditView}>EDIT PROFILE</button></h2>
                 : (<div><input 
                     value={this.state.first_name}
                     placeholder='NEW FIRST NAME'
@@ -80,7 +82,7 @@ class Profile extends Component{
             </section>
                 <section className='collections'>
                     <div>
-                        <h3>UPLOAD</h3>
+                        <Dropzone />
                     </div>
                     <div>
                         <h3>DOWNLOAD</h3>
@@ -96,8 +98,16 @@ class Profile extends Component{
 
         </section>      
         )
-    } 
+    }
+     
 
 }
 
-export default connect(state => state)(Profile);
+const mapStateToProps = (reduxState) => {
+    return{
+        aR: reduxState.authReducer  
+    }
+}
+
+
+export default connect(mapStateToProps)(Profile);

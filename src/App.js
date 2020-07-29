@@ -7,11 +7,9 @@ import Nav from './Components/Nav/Nav';
 
 
 function App(props) {
-  console.log(props)
+  
   return (
     <div className="App">
-        
-        
         {props.location.pathname === '/' ? null: <Nav history={props.location}/>}
         {routes}
     </div>

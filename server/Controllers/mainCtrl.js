@@ -24,12 +24,9 @@ module.exports = {
 
     getPosts: async (req, res) => {
         const db = req.app.get('db'),
-        {title, image, content} = req.body
-
-    allPosts = await db.get_all_posts({title, image, content});
-    if(!allPosts[0]){
-        return res.status(200).send(allPosts)
-        }
+        
+    allPosts = await db.get_all_posts();
+    return res.status(200).send(allPosts)
     },
 
 

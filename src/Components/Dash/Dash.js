@@ -1,5 +1,6 @@
 import React,  {Component} from 'react';
 import {connect} from 'react-redux';
+import {getPosts} from '../../Dux/userReducer';
 import axios from 'axios';
 import './dash.css';
 
@@ -18,10 +19,11 @@ class Dash extends Component {
     }
 
     componentDidMount(){
-        this.getPosts()
-        if(!this.props.w_user.email){
-            this.props.history.push('/dash');
-        }
+        this.props.getPosts()
+        this.setState({
+           posts: this.props.w_user
+
+        })
     }
 
     handleInput = (e) => {
@@ -39,21 +41,17 @@ class Dash extends Component {
         .catch(err => console.log(err));
     }
 
-    getPosts = () => {
-        axios.get(`/api/post/`)
-        .then(res => this.setState({posts: res.data}))
-        .catch(err => console.log(err));
-    }
+  
 
     render(){
-        const mappedPost = this.state.posts.map((post, i) => {
+        const mappedPost = this.props.w_user.map((post, i) => {
         return <div className='feed-list' key={i}>
             <p>{post.title}</p>
             <img src={post.image} alt='post' />
             <p>{post.content}</p>
         </div>
         })
-       
+       console.log(this.props)
     
         return(
             <section className='flex-container'>
@@ -102,8 +100,8 @@ class Dash extends Component {
 
 const mapStateToProps = reduxState => {
     return {
-        w_user: reduxState.w_user
+        w_user: reduxState.userReducer.w_user
     }
 }
 
-export default connect(mapStateToProps)(Dash);
+export default connect(mapStateToProps, {getPosts})(Dash);

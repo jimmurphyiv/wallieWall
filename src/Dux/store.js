@@ -1,4 +1,9 @@
-import {createStore} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import promiseMiddleware from 'redux-promise-middleware';
 import authReducer from '../Dux/authReducer';
+import userReducer from '../Dux/userReducer';
 
-export default createStore(authReducer);
+const rootReducer = combineReducers({
+    authReducer, userReducer
+})
+export default createStore(rootReducer, applyMiddleware(promiseMiddleware));

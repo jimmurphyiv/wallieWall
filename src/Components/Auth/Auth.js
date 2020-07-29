@@ -19,11 +19,8 @@ class Auth extends Component {
         }
     }
 
-    componentDidMount() {
-        if(this.props.w_user.email){
-            this.props.history.push('/Dash');
-        }
-    }
+    
+    
 
     handleInput = (e) => {
         this.setState({[e.target.name]: e.target.value})
