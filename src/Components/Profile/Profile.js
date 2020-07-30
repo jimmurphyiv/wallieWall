@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
-import Dropzone from '../Dropzone';
+import MyDropzone from '../Dropzone'
 import axios from 'axios';
 import './profile.css'
 
@@ -82,7 +82,7 @@ class Profile extends Component{
             </section>
                 <section className='collections'>
                     <div>
-                        <Dropzone />
+                        <MyDropzone/>
                     </div>
                     <div>
                         <h3>DOWNLOAD</h3>
