@@ -15,9 +15,9 @@ class Search extends Component{
             <div className='search-container'>
                 <section className='search-box'>
                     <h3>SEARCH</h3>
-                    KEYWORD
+                    
                     <button>KEYWORD</button>
-                    TYPE
+                    
                     <button>TYPE</button>
                 </section>
 

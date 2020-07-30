@@ -5,7 +5,14 @@ import axios from 'axios';
 import {getUser} from '../../Dux/authReducer';
 import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import wwcarousel from '../../wwcarousel';
+import oneJpeg from './wwcarousel/1.jpeg';
+import twoJpeg from './wwcarousel/2.jpeg';
+import threeJpeg from './wwcarousel/3.jpeg';
+import fourJpeg from './wwcarousel/4.jpeg';
+import fiveJpeg from './wwcarousel/5.jpeg';
+import sixJpeg from './wwcarousel/6.jpeg';
+import sevenJpeg from './wwcarousel/7.jpeg';
+import eightJpeg from './wwcarousel/8.jpeg';
 import './home.css';
 import Nav from '../Nav/Nav';
 
@@ -58,42 +65,34 @@ class Home extends Component{
             <Link to='/Auth'>
                     <button onClick={this.handleRegister} >SIGN-UP!</button></Link>
                 </div>
-                <section className='sneek-peek'>
+                    <section className='sneek-peek'>
                     <h1>SNEEK PEEK</h1>
-                <Carousel autoPlay>
-                <div className='sneek-pic'>
-                    <img src="src/wwcarousel/1.jpeg" alt=''/>
-                    
-                </div>
-                <div className='sneek-pic'>
-                    <img src="wwcarousel/2.jpeg" alt=''/>
-                    
-                </div>
-                <div className='sneek-pic'>
-                    <img src="wwcarousel/3.jpeg" alt=''/>
-                    
-                </div>
-                <div className='sneek-pic'>
-                    <img src="wwcarousel/4.jpeg" alt=''/>
-                    
-                </div>
-                <div className='sneek-pic'>
-                    <img src="wwcarousel/5.jpeg"  alt=''/>
-                    
-                </div>
-                <div className='sneek-pic'>
-                    <img src="wwcarousel/6.jpeg" alt=''/>
-                    
-                </div>
-                <div className='sneek-pic'>
-                    <img src="wwcarousel/7.jpeg" alt=''/>
-                    
-                </div>
-                <div className='sneek-pic'>
-                    <img src="wwcarousel/8.jpeg" alt=''/>
-                    
-                </div>
-            </Carousel>
+                    <Carousel autoPlay>
+                        <div className='sneek-pic'>
+                            <img src={oneJpeg} alt=''/>
+                        </div>
+                        <div className='sneek-pic'>
+                            <img src={twoJpeg} alt=''/>
+                        </div>
+                        <div className='sneek-pic'>
+                            <img src={threeJpeg} alt=''/>
+                        </div>
+                        <div className='sneek-pic'>
+                            <img src={fourJpeg} alt=''/>
+                        </div>
+                        <div className='sneek-pic'>
+                            <img src={fiveJpeg}  alt=''/>
+                        </div>
+                        <div className='sneek-pic'>
+                            <img src={sixJpeg} alt=''/>
+                        </div>
+                        <div className='sneek-pic'>
+                            <img src={sevenJpeg} alt=''/>
+                        </div>
+                        <div className='sneek-pic'>
+                            <img src={eightJpeg}alt=''/>
+                        </div>
+                    </Carousel>
                 </section>
             </div>
         )

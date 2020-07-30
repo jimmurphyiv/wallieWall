@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {getUser, clearUser} from '../../Dux/authReducer';
 import axios from 'axios';
-
+import Logo from '../Nav/wallieWall_logo.png';
 import './nav.css';
 
 
@@ -39,7 +39,10 @@ class Nav extends Component {
 render(){
         return (
             <div className='Nav'>
+                
                 <nav>
+             
+                
                     <ul>
                        <li>
                          <Link to='/'
@@ -57,6 +60,9 @@ render(){
                         <li>
                             <Link to='/Dash'>Dash</Link>
                         </li>
+                        <div className='logo'>
+                            <img src={Logo} alt="Logo" />
+                        </div>
                     </ul>
                 </nav>
             </div> 
