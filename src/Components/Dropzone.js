@@ -22,6 +22,7 @@ function MyDropzone(){
           },
         })
         .then(res => {
+            console.log(res.data)
           const {signedRequest, url} = res.data;
           uploadFile(file, signedRequest, url);
         })
@@ -37,25 +38,27 @@ function MyDropzone(){
         };
         axios.put(signedRequest, file, options)
       .then(res => {
+          console.log(res)
         setIsUploading(false)
         setUrl(url)
     })
     .catch(err => {
+        console.log(err)
         setIsUploading(false)
-      if (err.response.status === 403) {
+      if (err.res.status === 403) {
           alert(
-            `Your request for a signed URL failed with a status 403. Double check the CORS configuration and bucket policy in the README. You also will want to double check your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in your .env and ensure that they are the same as the ones that you created in the IAM dashboard. You may need to generate new keys\n${
+            `Your request for a signed URL failed with a status 403. Double check the CORS configuration and bucket policy in the README. You also will want to double check your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY in your .env and ensure that they are the same as the ones that you created in the IAM dashboard. You may need to generate new keys{
               err.stack
             }`
           );
         } else {
-          alert(`ERROR: ${err.status}\n ${err.stack}`);
+          alert(`ERROR: ${err.status}, ${err.stack}`);
         }
       });
   };
 
   
-    
+    console.log(url)
     return (
       <div className="dropzone">
            <h1>Upload</h1>

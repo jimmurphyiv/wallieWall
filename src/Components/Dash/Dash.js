@@ -55,7 +55,7 @@ class Dash extends Component {
     
         return(
             <section className='flex-container'>
-               {mappedPost}
+             
                 <div className='profile-box'>
                     <div className='pic'>
                     <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ4hqw2XMon3rqiCFCBzaoVH-ljz007Om7SkA&usqp=CAU' alt='bender' />
@@ -67,6 +67,7 @@ class Dash extends Component {
                
                 <div className='feed'>
                     <h2>FEED</h2>
+                    {mappedPost}
                     <input 
                     value={this.state.title}
                     name='title'

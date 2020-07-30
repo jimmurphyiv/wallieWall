@@ -33,10 +33,10 @@ massive({
     console.log('db ALL GOOD')
 })
 
-app.get('/sign-s3', (req, res) => {
-// console.log(res, "work son work!!!!!!!!!!")
+app.get('/api/signs3', (req, res) => {
+console.log('hit s3')
 aws.config = {
-    region: 'us-west-1',
+    region: 'us-east-2',
     accessKeyId: AWS_ACCESS_KEY_ID,
     secretAccessKey: AWS_SECRET_ACCESS_KEY
 }
