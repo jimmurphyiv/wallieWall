@@ -30,16 +30,22 @@ button {
 
 }
 
-.carousel {
+.sneek-peek {
+    
     box-sizing: content-box;
     height: 400px;
-    width: 700px;
+    width: 800px;
     background-color: teal;
     margin: 10%;
     text-align: center;
     border-radius: 20px;
     color: white;
 
+}
+
+.sneek-pic {
+    height: 300px;
+    
 }
 
 

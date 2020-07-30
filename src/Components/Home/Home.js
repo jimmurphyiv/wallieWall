@@ -3,6 +3,9 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import {getUser} from '../../Dux/authReducer';
+import {Carousel} from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import wwcarousel from '../../wwcarousel';
 import './home.css';
 import Nav from '../Nav/Nav';
 
@@ -55,8 +58,42 @@ class Home extends Component{
             <Link to='/Auth'>
                     <button onClick={this.handleRegister} >SIGN-UP!</button></Link>
                 </div>
-                <section className='carousel'>
+                <section className='sneek-peek'>
                     <h1>SNEEK PEEK</h1>
+                <Carousel autoPlay>
+                <div className='sneek-pic'>
+                    <img src="src/wwcarousel/1.jpeg" alt=''/>
+                    
+                </div>
+                <div className='sneek-pic'>
+                    <img src="wwcarousel/2.jpeg" alt=''/>
+                    
+                </div>
+                <div className='sneek-pic'>
+                    <img src="wwcarousel/3.jpeg" alt=''/>
+                    
+                </div>
+                <div className='sneek-pic'>
+                    <img src="wwcarousel/4.jpeg" alt=''/>
+                    
+                </div>
+                <div className='sneek-pic'>
+                    <img src="wwcarousel/5.jpeg"  alt=''/>
+                    
+                </div>
+                <div className='sneek-pic'>
+                    <img src="wwcarousel/6.jpeg" alt=''/>
+                    
+                </div>
+                <div className='sneek-pic'>
+                    <img src="wwcarousel/7.jpeg" alt=''/>
+                    
+                </div>
+                <div className='sneek-pic'>
+                    <img src="wwcarousel/8.jpeg" alt=''/>
+                    
+                </div>
+            </Carousel>
                 </section>
             </div>
         )
