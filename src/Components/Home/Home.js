@@ -69,28 +69,28 @@ class Home extends Component{
                     <h1>SNEEK PEEK</h1>
                     <Carousel autoPlay>
                         <div className='sneek-pic'>
-                            <img src={oneJpeg} alt=''/>
+                            <img src={oneJpeg} alt='union terminal'/>
                         </div>
                         <div className='sneek-pic'>
-                            <img src={twoJpeg} alt=''/>
+                            <img src={twoJpeg} alt='abstract paint'/>
                         </div>
                         <div className='sneek-pic'>
-                            <img src={threeJpeg} alt=''/>
+                            <img src={threeJpeg} alt='grand tetons'/>
                         </div>
                         <div className='sneek-pic'>
-                            <img src={fourJpeg} alt=''/>
+                            <img src={fourJpeg} alt='abstract pour'/>
                         </div>
                         <div className='sneek-pic'>
-                            <img src={fiveJpeg}  alt=''/>
+                            <img src={fiveJpeg}  alt='lighthouse stairwell'/>
                         </div>
                         <div className='sneek-pic'>
-                            <img src={sixJpeg} alt=''/>
+                            <img src={sixJpeg} alt='monteray bay sunset'/>
                         </div>
                         <div className='sneek-pic'>
-                            <img src={sevenJpeg} alt=''/>
+                            <img src={sevenJpeg} alt='oregon coast'/>
                         </div>
                         <div className='sneek-pic'>
-                            <img src={eightJpeg}alt=''/>
+                            <img src={eightJpeg}alt='abstract camera'/>
                         </div>
                     </Carousel>
                 </section>

@@ -41,8 +41,6 @@ render(){
             <div className='Nav'>
                 
                 <nav>
-             
-                
                     <ul>
                        <li>
                          <Link to='/'
