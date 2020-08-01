@@ -77,8 +77,8 @@ app.put('/api/profile/:id', mainCtrl.editProfile);
 
 //Post endpoints
 app.post('/api/post/:author_id', mainCtrl.createPost);
-// app.get('/api/post/:id', mainCtrl.getUserPost);
+app.get('/api/post/:id', mainCtrl.getUserPosts);
 app.get('/api/post', mainCtrl.getPosts)
-
+app.delete('/api/post/:id',mainCtrl.deletePost);
 
 app.listen(SERVER_PORT, () => console.log('Good Vibes on 5050'))

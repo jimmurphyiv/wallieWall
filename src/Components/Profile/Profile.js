@@ -12,7 +12,8 @@ class Profile extends Component{
             last_name: '',
             username: '',
             profile_pic: '',
-            editView: false
+            editView: false,
+            userPosts: []
         }
     }
   
@@ -40,8 +41,18 @@ class Profile extends Component{
         .catch(err => console.log(err));
     }
 
+
+
     render(){
-        // console.log(this.props)
+        console.log(this.props)
+        const mappedPost = this.props.uR.w_user.map((post, i) => {
+            return <div className='list' key={i}>
+                <p>{post.title}</p>
+                <img src={post.image} alt='post' />
+                <p>{post.content}</p>
+            </div>
+            })
+       
         return (
             <section className='profile-container' >
                 <div className='profile-box'>
@@ -84,7 +95,7 @@ class Profile extends Component{
                         <MyDropzone/>
                     </div>
                     <div>
-                        <h3>DOWNLOAD</h3>
+                        <h3>Posts</h3>
                     </div>
                     <div>
                         <h3>Public Collection</h3>
@@ -104,7 +115,8 @@ class Profile extends Component{
 
 const mapStateToProps = (reduxState) => {
     return{
-        aR: reduxState.authReducer  
+        aR: reduxState.authReducer,
+        uR: reduxState.userReducer  
     }
 }
 

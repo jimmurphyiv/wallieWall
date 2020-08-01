@@ -6,6 +6,7 @@ const initialState = {
 
 const GET_POSTS = 'GET_POSTS';
 
+ 
 
 export function getPosts(){ console.log('hit')
     let posts = axios.get('/api/post')
@@ -14,6 +15,8 @@ export function getPosts(){ console.log('hit')
         payload: posts
     }
 }
+
+
 
 export default function reducer(state = initialState, action){
     const {type, payload} = action;

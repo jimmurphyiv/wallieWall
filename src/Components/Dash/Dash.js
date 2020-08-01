@@ -41,6 +41,17 @@ class Dash extends Component {
         .catch(err => console.log(err));
     }
 
+    
+  
+
+
+    deletePost = (id) => {
+        axios.delete(`/api/post/${id}`)
+        .then(() => {this.getUserPosts();
+        })
+        .catch(err => console.log(err))
+    }
+
   
 
     render(){
