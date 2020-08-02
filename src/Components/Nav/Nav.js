@@ -37,26 +37,27 @@ class Nav extends Component {
             }
 
 render(){
+    console.log(this.props)
         return (
             <div className='Nav'>
                 
                 <nav>
                     <ul>
                        <li>
-                         <Link to='/'
-                            onClick={this.handleLogout} >Logout</Link>
+                       {this.props.aR.w_user.id ?<Link to='/'
+                             onClick={this.handleLogout} >Logout</Link> : null}
                         </li>
                         <li>
                             <Link to='/Contact'>Contact</Link>
                         </li>
                         <li>
-                            <Link to='/Search'>Search</Link>
+                        {this.props.aR.w_user.id ? <Link to='/Search'>Search</Link>  : null}
                         </li>
                         <li>
-                             <Link to='/Profile'>Profile</Link>
+                        {this.props.aR.w_user.id ? <Link to='/Profile'>Profile</Link> : null}
                         </li>
                         <li>
-                            <Link to='/Dash'>Dash</Link>
+                        {this.props.aR.w_user.id ? <Link to='/Dash'>Dash</Link> : null}
                         </li>
                         <div className='logo'>
                             <img src={Logo} alt="Logo" />
@@ -68,6 +69,12 @@ render(){
     }
 }
 
-const mapStateToProps = reduxState => reduxState;
+
+const mapStateToProps = (reduxState) => {
+    return{
+        aR: reduxState.authReducer,
+        uR: reduxState.userReducer  
+    }
+}
     
 export default connect(mapStateToProps, {getUser, clearUser})(Nav);

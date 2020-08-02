@@ -42,6 +42,11 @@ class Dash extends Component {
     }
 
     
+    getUserPosts = () => {
+        axios.get(`/api/post/${this.props.w_user.id}`)
+        .then(res => this.setState({posts: res.data}))
+        .catch(err => console.log(err));
+    }
   
 
 
@@ -79,7 +84,7 @@ class Dash extends Component {
                
                 <div className='feed'>
                     <h2>FEED</h2>
-                    {mappedPost}
+                    
                     <input 
                     value={this.state.title}
                     name='title'
@@ -98,7 +103,8 @@ class Dash extends Component {
                     placeholder='Add Content'
                     onChange={this.handleInput}/>
                 <button onClick={this.createPost}>Post</button>
-                   
+                
+                {mappedPost}
                 </div>
                 
                 <div className='messages'>

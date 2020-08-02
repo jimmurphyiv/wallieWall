@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
 import Carousel from "react-simply-carousel";
 import oneJpeg from './wwcarousel/1.jpeg';
 import twoJpeg from './wwcarousel/2.jpeg';
@@ -65,7 +64,7 @@ function MyCarousel() {
             }}
             key={index}
           >
-            <img src={item} style={{
+            <img src={item} alt='default wallpapers' style={{
               width: 700,
               height: 500,
 

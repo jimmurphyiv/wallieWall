@@ -48,6 +48,19 @@
     
 }
 
+.feed-list{
+    box-sizing: border-box;
+    width: 450px;
+    height: 250px;
+}
+
+.feed-list img {
+    box-sizing: content-box;
+    width: 225px;
+    width:300px;
+    float: right;
+}
+
 .messages { 
     box-sizing: content-box;
     border-radius: 10px;
