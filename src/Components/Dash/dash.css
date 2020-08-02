@@ -55,8 +55,8 @@
 }
 
 .feed-list img {
-    box-sizing: content-box;
-    width: 225px;
+    contain: content;
+    width: 100px;
     width:300px;
     float: right;
 }

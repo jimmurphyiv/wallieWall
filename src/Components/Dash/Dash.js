@@ -60,11 +60,12 @@ class Dash extends Component {
   
 
     render(){
-        const mappedPost = this.props.w_user.map((post, i) => {
+        const mappedPost = this.props.uR.w_user.map((post, i) => {
         return <div className='feed-list' key={i}>
             <p>{post.title}</p>
             <img src={post.image} alt='post' />
             <p>{post.content}</p>
+            <button>Post</button>
         </div>
         })
        console.log(this.props)
@@ -74,8 +75,8 @@ class Dash extends Component {
              
                 <div className='profile-box'>
                     <div className='pic'>
-                    <img src={this.props.w_user.profile_pic}
-                    alt={this.props.w_user.username}/>
+                    <img src={this.props.aR.w_user.profile_pic}
+                    alt={this.props.aR.w_user.username}/>
                     </div>
                     <div className='bio'>
                     Subway tile crucifix sustainable man braid fanny pack fashion axe whatever bitters kitsch yr kombucha af messenger bag.Lomo selvage single-origin coffee try-hard beard subway tile jianbing crucifix thundercats vape. Lomo plaid humblebrag mumblecore, offal quinoa fixie taxidermy. Gochujang 3 wolf moon heirloom glossier, squid iceland poke yr slow-carb gluten-free hashtag bicycle rights. Humblebrag sriracha af yuccie, kombucha squid hella selvage
@@ -103,7 +104,7 @@ class Dash extends Component {
                     placeholder='Add Content'
                     onChange={this.handleInput}/>
                 <button onClick={this.createPost}>Post</button>
-                
+
                 {mappedPost}
                 </div>
                 
@@ -117,9 +118,10 @@ class Dash extends Component {
     }
 }
 
-const mapStateToProps = reduxState => {
-    return {
-        w_user: reduxState.userReducer.w_user
+const mapStateToProps = (reduxState) => {
+    return{
+        aR: reduxState.authReducer,
+        uR: reduxState.userReducer  
     }
 }
 

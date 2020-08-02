@@ -57,7 +57,7 @@ class Profile extends Component{
             <section className='profile-container' >
                 <div className='profile-box'>
                     <div className='pic'>
-                    <img src={this.props.aR.w_user.profile_pic|| ''}
+                    <img src={this.props.aR.w_user.profile_pic}
                     alt={this.props.aR.w_user.username}/>
                     </div>
                     <div className='bio'>
@@ -95,7 +95,7 @@ class Profile extends Component{
                         <MyDropzone/>
                     </div>
                     <div>
-                        <h3>Posts</h3>
+                        {mappedPost}
                     </div>
                     <div>
                         <h3>Public Collection</h3>
