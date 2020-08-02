@@ -3,18 +3,13 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import {getUser} from '../../Dux/authReducer';
-import {Carousel} from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import oneJpeg from './wwcarousel/1.jpeg';
-import twoJpeg from './wwcarousel/2.jpeg';
-import threeJpeg from './wwcarousel/3.jpeg';
-import fourJpeg from './wwcarousel/4.jpeg';
-import fiveJpeg from './wwcarousel/5.jpeg';
-import sixJpeg from './wwcarousel/6.jpeg';
-import sevenJpeg from './wwcarousel/7.jpeg';
-import eightJpeg from './wwcarousel/8.jpeg';
+import MyCarousel from '../../Components/My Carousel/MyCarousel';
 import './home.css';
 import Nav from '../Nav/Nav';
+
+
+
+
 
 
 class Home extends Component{
@@ -42,8 +37,9 @@ class Home extends Component{
             
         })
         .catch(err => console.log(err));
-        
     }
+
+
     render(){
         return(
             <div>
@@ -65,35 +61,10 @@ class Home extends Component{
             <Link to='/Auth'>
                     <button onClick={this.handleRegister} >SIGN-UP!</button></Link>
                 </div>
-                    <section className='sneek-peek'>
+                    <div className='sneek-peek'>
                     <h1>SNEEK PEEK</h1>
-                    <Carousel autoPlay>
-                        <div className='sneek-pic'>
-                            <img src={oneJpeg} alt='union terminal'/>
-                        </div>
-                        <div className='sneek-pic'>
-                            <img src={twoJpeg} alt='abstract paint'/>
-                        </div>
-                        <div className='sneek-pic'>
-                            <img src={threeJpeg} alt='grand tetons'/>
-                        </div>
-                        <div className='sneek-pic'>
-                            <img src={fourJpeg} alt='abstract pour'/>
-                        </div>
-                        <div className='sneek-pic'>
-                            <img src={fiveJpeg}  alt='lighthouse stairwell'/>
-                        </div>
-                        <div className='sneek-pic'>
-                            <img src={sixJpeg} alt='monteray bay sunset'/>
-                        </div>
-                        <div className='sneek-pic'>
-                            <img src={sevenJpeg} alt='oregon coast'/>
-                        </div>
-                        <div className='sneek-pic'>
-                            <img src={eightJpeg}alt='abstract camera'/>
-                        </div>
-                    </Carousel>
-                </section>
+                    <MyCarousel />
+                </div>
             </div>
         )
     }
@@ -102,3 +73,11 @@ class Home extends Component{
 const mapStateToProps = reduxState => reduxState;
 
 export default connect(mapStateToProps, {getUser})(Home);
+                        
+                        
+                        
+                        
+                        
+                        
+                      
+                       
