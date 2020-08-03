@@ -32,23 +32,20 @@ button {
 }
 
 .sneek-peek {
-    
     box-sizing: content-box;
     height: 600px;
-    width: 800px;
-    background-color: teal;
+    width: 950px;
+    background-color: #02AAAA;
     margin: 5%;
     margin-left: 10%;
+    padding-top: 1%;
     text-align: center;
     border-radius: 20px;
     color: white;
-    box-shadow: black 0px 10px 10px;
+    box-shadow: teal 0px 10px 10px;
+    
 
 }
 
-.sneek-pic {
-    height: 450px;
-
-}
 
 

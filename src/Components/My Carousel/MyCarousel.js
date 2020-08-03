@@ -34,8 +34,8 @@ function MyCarousel() {
         forwardBtnProps={{
           children: ">",
           style: {
-            width: 60,
-            height: 60,
+            width: 80,
+            height: 40,
             minWidth: 60,
             alignSelf: "center"
           }
@@ -43,8 +43,8 @@ function MyCarousel() {
         backwardBtnProps={{
           children: "<",
           style: {
-            width: 60,
-            height: 60,
+            width: 80,
+            height: 40,
             minWidth: 60,
             alignSelf: "center"
           }
@@ -56,8 +56,8 @@ function MyCarousel() {
           <div
             style={{
               background: "red",
-              width: 700,
-              height: 500,
+              width: 720,
+              height: 405,
               textAlign: "center",
               lineHeight: "240px",
               boxSizing: "border-box"
@@ -65,8 +65,8 @@ function MyCarousel() {
             key={index}
           >
             <img src={item} alt='default wallpapers' style={{
-              width: 700,
-              height: 500,
+              width: 720,
+              height: 405,
 
             }} />
           </div>
