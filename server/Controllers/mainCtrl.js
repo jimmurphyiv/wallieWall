@@ -1,6 +1,7 @@
 module.exports = {
 
     editProfile: async (req, res) => {
+        console.log('hit editprofile')
         const db = req.app.get('db'),
         {id} = req.params,
         {first_name, last_name, username, profile_pic} = req.body,
@@ -52,8 +53,8 @@ module.exports = {
     updateWallpaper: async (req, res) => {
         const db = req.app.get('db');
         const {id} = req.params,
-        {wallpaper} = req.body,
-    
+        {wallpaper} = req.body
+        console.log(id. wallpaper)
     addWallpaper = await db.add_wallpaper([id, wallpaper]);
         return res.status(200).send(addWallpaper)
     }

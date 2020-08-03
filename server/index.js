@@ -34,7 +34,7 @@ massive({
 })
 
 app.get('/api/signs3', (req, res) => {
-console.log('hit s3')
+// console.log('hit s3')
 aws.config = {
     region: 'us-east-2',
     accessKeyId: AWS_ACCESS_KEY_ID,
@@ -54,15 +54,16 @@ const s3Params = {
     
 s3.getSignedUrl('putObject', s3Params, (err, data) => {
     if (err) {
-    console.log(err);
+    console.log('-------',err);
         return res.end();
     }
+    console.log('hit s3')
 const returnData = {
     signedRequest: data,
     url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     };
-  
-    return res.send(returnData)
+    console.log(returnData)
+    res.status(200).send(returnData)
     });
 });
 
