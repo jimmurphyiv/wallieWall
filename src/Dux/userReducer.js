@@ -8,7 +8,7 @@ const GET_POSTS = 'GET_POSTS';
 
  
 
-export function getPosts(){ console.log('hit')
+export function getPosts(){ 
     let posts = axios.get('/api/post')
     return {
         type: GET_POSTS,
