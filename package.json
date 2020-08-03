@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "massive": "^6.6.0",
+    "nodemailer": "^6.4.11",
     "nodemon": "^2.0.4",
     "nuka-carousel": "^4.7.0",
     "react": "^16.13.1",

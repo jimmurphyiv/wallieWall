@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import { v4 as randomString } from 'uuid';
 import Dropzone from 'react-dropzone';
 import { GridLoader } from 'react-spinners';
+import { getUser } from '../Dux/authReducer';
+import {connect} from 'react-redux';
 import axios from 'axios';
 
-function MyDropzone(){
+function MyDropzone(props){
           const [isUploading, setIsUploading] = useState(0);
           const [url, setUrl] = useState(0);
         
@@ -57,10 +59,19 @@ function MyDropzone(){
       });
   };
 
+  const pushWallpaper = () => {
+    const {id} = props.aR.w_user.id
+    axios.put(`/api/wallpaper/${id}`, url)
+    .then(() => {
+      
+    })
+    .catch(err => console.log(err));
+  }
   
     console.log(url)
     return (
       <div className="dropzone">
+        
            <h1>Upload</h1>
            <img src={url} alt="" width="250px" />
            <Dropzone
@@ -75,10 +86,21 @@ function MyDropzone(){
                 accept="image/*"
                 multiple={false}>
                 {isUploading ? <GridLoader /> : <p>Drop File or Click Here</p>}
+                <button onClick={pushWallpaper}>SUBMIT</button>
             </Dropzone>
         </div>
         );
     
 }
 
-export default MyDropzone;
+
+const mapStateToProps = (reduxState) => {
+  return{
+      aR: reduxState.authReducer,
+      uR: reduxState.userReducer  
+  }
+}
+
+
+export default connect(mapStateToProps, {getUser})(MyDropzone);
+

@@ -74,11 +74,15 @@ app.get('/auth/me', authCtrl.logMeIn);
 
 //User endpoints
 app.put('/api/profile/:id', mainCtrl.editProfile);
+app.put('/api/wallpaper/:id', mainCtrl.updateWallpaper);
 
 //Post endpoints
 app.post('/api/post/:author_id', mainCtrl.createPost);
 app.get('/api/post/:id', mainCtrl.getUserPosts);
 app.get('/api/post', mainCtrl.getPosts)
 app.delete('/api/post/:id',mainCtrl.deletePost);
+
+//Nodemailer
+// app.post('/api/email', mailCtrl.email);
 
 app.listen(SERVER_PORT, () => console.log('Good Vibes on 5050'))

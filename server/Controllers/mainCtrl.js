@@ -43,11 +43,20 @@ module.exports = {
 
     deletePost: async (req, res) => {
         const db = req.app.get('db');
-        const {id}= req.params
+        const {id}= req.params,
 
     removePost = await db.delete_post(id)
     return res.status(200).send(removePost)
     },
+
+    updateWallpaper: async (req, res) => {
+        const db = req.app.get('db');
+        const {id} = req.params,
+        {wallpaper} = req.body,
+    
+    addWallpaper = await db.add_wallpaper([id, wallpaper]);
+        return res.status(200).send(addWallpaper)
+    }
 
 
 }

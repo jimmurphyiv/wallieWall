@@ -5,7 +5,7 @@ Nav {
     font-family: 'Hind Madurai', sans-serif;
     font-weight: bold;
     font-size: 25px;
-    box-shadow: black 0px 10px 10px;
+    box-shadow: #1F2423 0px 10px 10px;
   
     
 }
@@ -34,7 +34,7 @@ li a {
 }
 
 li a:hover {
-    background-color: turquoise;
+    background-color: #1e8f8f;
 }
 
 .logo {
