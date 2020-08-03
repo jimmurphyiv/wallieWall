@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import nodemailer from '../../'
 import './contact.css';
 
 class Contact extends Component{

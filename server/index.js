@@ -4,6 +4,7 @@ const express = require('express');
 const massive = require('massive');
 const session = require('express-session');
 const mainCtrl = require('./Controllers/mainCtrl');
+const mailCtrl = require('./Controllers/mailCtrl');
 const authCtrl = require('./Controllers/authCtrl');
 
 const {SERVER_PORT,
@@ -84,6 +85,6 @@ app.get('/api/post', mainCtrl.getPosts)
 app.delete('/api/post/:id',mainCtrl.deletePost);
 
 //Nodemailer
-// app.post('/api/email', mailCtrl.email);
+app.post('/api/email', mailCtrl.email);
 
 app.listen(SERVER_PORT, () => console.log('Good Vibes on 5050'))

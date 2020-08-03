@@ -67,14 +67,14 @@ function MyDropzone(props) {
       });
   };
 
-  // const pushWallpaper = () => {
-  //   const {id} = props.aR.w_user.id
-  //   axios.put(`/api/wallpaper/${id}`, url)
-  //   .then(() => {
+  const pushWallpaper = () => {
+    const {id} = props.aR.w_user.id
+    axios.put(`/api/wallpaper/${id}`, url)
+    .then(() => {
 
-  //   })
-  //   .catch(err => console.log(err));
-  // }
+    })
+    .catch(err => console.log(err));
+  }
 
   console.log(url)
   return (
@@ -94,7 +94,7 @@ function MyDropzone(props) {
         accept="image/*"
         multiple={false}>
         {isUploading ? <GridLoader /> : <p>Drop File or Click Here</p>}
-        {/* <button onClick={pushWallpaper}>SUBMIT</button> */}
+        <button onClick={pushWallpaper}>SUBMIT</button>
       </Dropzone>
     </div>
   );
