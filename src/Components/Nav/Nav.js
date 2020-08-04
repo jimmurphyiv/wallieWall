@@ -51,10 +51,13 @@ render(){
                             <Link to='/Contact'>Contact</Link>
                         </li>
                         <li>
+                            <Link to='/'>Home</Link>
+                        </li>
+                        <li>
                         {this.props.aR.w_user.id ? <Link to='/Search'>Search</Link>  : null}
                         </li>
                         <li>
-                        {this.props.aR.w_user.id ? <Link to='/Profile'>Profile</Link> : null}
+                        {this.props.aR.w_user.id ? <Link to='/profile'>Profile</Link> : null}
                         </li>
                         <li>
                         {this.props.aR.w_user.id ? <Link to='/Dash'>Dash</Link> : null}

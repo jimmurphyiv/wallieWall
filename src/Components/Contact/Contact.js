@@ -37,28 +37,28 @@ class Contact extends Component{
         return(
           
             <div className='contact-box'>
-                <input
-                    name='email'
-                    type='text'
-                    placeholder='ENTER EMAIL'
-                    onChange={this.handleInput}>
-                </input>
-                <input
-                    name='subject'
-                    type='text'
-                    placeholder='ENTER SUBJECT'
-                    onChange={this.handleInput}>
-                </input>
-                <textarea
-                    name='content'
-                    type='text'
-                    placeholder='ENTER CONTENT'
-                    onChange={this.handleInput}>
-                </textarea>  
-            <button onClick={this.sendEmail}>SEND EMAIL</button>
+            <input className='email-box'
+                name='email'
+                type='text'
+                placeholder='Enter Your Email Address Here!'
+                onChange={this.handleInput}>
+            </input>
+            <input className='sub-box'
+                name='subject'
+                type='text'
+                placeholder='Subject'
+                onChange={this.handleInput}>
+            </input>
+            <textarea className='text-box'
+                name='content'
+                type='text'
+                placeholder='Tell Us What You Think!'
+                onChange={this.handleInput}>
+            </textarea>  
+        <button onClick={this.sendEmail}>SEND EMAIL</button>
 
-                    
-            </div>
+                
+        </div>
         )
     }
 }

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
-import MyDropzone from '../Dropzone'
 import axios from 'axios';
 import './profile.css'
+
 
 class Profile extends Component{
     constructor(props){
@@ -13,7 +13,8 @@ class Profile extends Component{
             username: '',
             profile_pic: '',
             editView: false,
-            userPosts: []
+            userPosts: [],
+            url: ''
         }
     }
   
@@ -40,6 +41,23 @@ class Profile extends Component{
         })
         .catch(err => console.log(err));
     }
+
+    deletePost = (id) => {
+        axios.delete(`/api/post/${id}`)
+        .then(() => {this.getUserPosts()})
+        .catch(err => console.log(err))
+    }
+
+        
+    pushWallpaper = () => {
+        const {id} = this.props.aR.w_user.id
+        const {url} = this.state.aR.w_user
+        axios.put(`/api/wallpaper/${id}`, url)
+        .then(() => {
+    
+        })
+        .catch(err => console.log(err));
+      }
 
 
 
@@ -92,7 +110,7 @@ class Profile extends Component{
             </section>
                 <section className='collections'>
                     <div>
-                        <MyDropzone/>
+                       
                     </div>
                     <div>
                         {mappedPost}
